@@ -18,34 +18,22 @@ async function interact() {
   const accounts = await web3.eth.getAccounts();
   const defaultAccount = accounts[0];
 
-  try {
-    // Hardcode patients' data with UUIDs
-    // const patients = [
-    //   { uuid: uuidv4().replace(/-/g, ''), name: "John Doe", phone: "1234567890", age: 30 },
-    //   { uuid: uuidv4().replace(/-/g, ''), name: "Jane Smith", phone: "0987654321", age: 25 },
-    //   { uuid: uuidv4().replace(/-/g, ''), name: "Alice Johnson", phone: "5556667777", age: 40 },
-    //   { uuid: uuidv4().replace(/-/g, ''), name: "Bob Williams", phone: "2223334444", age: 35 }
-    // ];
-
-    // Add patients to the contract
-    // for (const patient of patients) {
-    //   const patientReceipt = await myContract.methods
-    //     .createPatient(web3.utils.asciiToHex(patient.uuid), patient.name, patient.phone, patient.age)
-    //     .send({
-    //       from: defaultAccount,
-    //       gas: 1000000,
-    //       gasPrice: "10000000000",
-    //     });
-    //   console.log(`Patient ${patient.name} created with UUID: ${patient.uuid}`);
-    // }
+  
 
     // Retrieve and display all patients
-    // const allPatients = await myContract.methods.listAllPatients().call();
-    // console.log("All Patients:", allPatients);
+    try {
+        // Define the phone number to search for
+        const phoneNumber = "1234567890";
     
-  } catch (error) {
-    console.error(error);
-  }
+        // Get the patient by phone number
+        const patient = await myContract.methods.getPatientByPhone(phoneNumber).call();
+        console.log("Patient found:", patient);
+    
+      } catch (error) {
+        console.error(error);
+      }
+    
+  
 }
 
 interact();

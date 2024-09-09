@@ -30,6 +30,47 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string",
+				"name": "_phone",
+				"type": "string"
+			}
+		],
+		"name": "getPatientByPhone",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "uuid",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "phone",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct MyContract.Patient",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "bytes32",
 				"name": "_uuid",
 				"type": "bytes32"
