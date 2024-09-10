@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract MedicalRecords {
+contract MyContract {
 
     struct Patient {
         bytes32 uuid;

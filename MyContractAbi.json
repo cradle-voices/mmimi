@@ -8,6 +8,169 @@
 			},
 			{
 				"internalType": "string",
+				"name": "_allergen",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_reaction",
+				"type": "string"
+			}
+		],
+		"name": "addAllergy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_relation",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_condition",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_details",
+				"type": "string"
+			}
+		],
+		"name": "addFamilyHistory",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_illness",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_medicationName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_dosage",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_startDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_endDate",
+				"type": "uint256"
+			}
+		],
+		"name": "addMedication",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_surgeryType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_outcome",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_date",
+				"type": "uint256"
+			}
+		],
+		"name": "addSurgery",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_testName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_result",
+				"type": "string"
+			}
+		],
+		"name": "addTestResult",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_vitalName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_value",
+				"type": "string"
+			}
+		],
+		"name": "addVitalSign",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
 				"name": "_name",
 				"type": "string"
 			},
@@ -58,6 +221,155 @@
 						"internalType": "uint256",
 						"name": "age",
 						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "testName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "result",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Test[]",
+								"name": "tests",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "vitalName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "value",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.VitalSign[]",
+								"name": "vitalSigns",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "illness",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "medicationName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "dosage",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startDate",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endDate",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Medication[]",
+								"name": "medications",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "allergen",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "reaction",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Allergy[]",
+								"name": "allergies",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "surgeryType",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "outcome",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "date",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Surgery[]",
+								"name": "surgeries",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "relation",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "condition",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "details",
+										"type": "string"
+									}
+								],
+								"internalType": "struct MyContract.FamilyHistory[]",
+								"name": "familyHistories",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct MyContract.MedicalHistory",
+						"name": "medicalHistory",
+						"type": "tuple"
 					}
 				],
 				"internalType": "struct MyContract.Patient",
@@ -99,9 +411,321 @@
 						"internalType": "uint256",
 						"name": "age",
 						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "testName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "result",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Test[]",
+								"name": "tests",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "vitalName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "value",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.VitalSign[]",
+								"name": "vitalSigns",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "illness",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "medicationName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "dosage",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startDate",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endDate",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Medication[]",
+								"name": "medications",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "allergen",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "reaction",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Allergy[]",
+								"name": "allergies",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "surgeryType",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "outcome",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "date",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Surgery[]",
+								"name": "surgeries",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "relation",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "condition",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "details",
+										"type": "string"
+									}
+								],
+								"internalType": "struct MyContract.FamilyHistory[]",
+								"name": "familyHistories",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct MyContract.MedicalHistory",
+						"name": "medicalHistory",
+						"type": "tuple"
 					}
 				],
 				"internalType": "struct MyContract.Patient",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_uuid",
+				"type": "bytes32"
+			}
+		],
+		"name": "getPatientMedicalHistory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "testName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "result",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.Test[]",
+						"name": "tests",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "vitalName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "value",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.VitalSign[]",
+						"name": "vitalSigns",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "illness",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "medicationName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "dosage",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.Medication[]",
+						"name": "medications",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "allergen",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "reaction",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.Allergy[]",
+						"name": "allergies",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "surgeryType",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "outcome",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "date",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.Surgery[]",
+						"name": "surgeries",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "relation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "condition",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "details",
+								"type": "string"
+							}
+						],
+						"internalType": "struct MyContract.FamilyHistory[]",
+						"name": "familyHistories",
+						"type": "tuple[]"
+					}
+				],
+				"internalType": "struct MyContract.MedicalHistory",
 				"name": "",
 				"type": "tuple"
 			}
@@ -134,45 +758,160 @@
 						"internalType": "uint256",
 						"name": "age",
 						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "testName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "result",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Test[]",
+								"name": "tests",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "vitalName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "value",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.VitalSign[]",
+								"name": "vitalSigns",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "illness",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "medicationName",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "dosage",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startDate",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endDate",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Medication[]",
+								"name": "medications",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "allergen",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "reaction",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "timestamp",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Allergy[]",
+								"name": "allergies",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "surgeryType",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "outcome",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "date",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct MyContract.Surgery[]",
+								"name": "surgeries",
+								"type": "tuple[]"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "relation",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "condition",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "details",
+										"type": "string"
+									}
+								],
+								"internalType": "struct MyContract.FamilyHistory[]",
+								"name": "familyHistories",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct MyContract.MedicalHistory",
+						"name": "medicalHistory",
+						"type": "tuple"
 					}
 				],
 				"internalType": "struct MyContract.Patient[]",
 				"name": "",
 				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "patients",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "uuid",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "phone",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "age",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
