@@ -121,5 +121,6 @@ module.exports = {
     addSurgery,
     addFamilyHistory,
     getPatientByPhone,
-    getPatientMedicalHistory
+    getPatientMedicalHistory,
+    // listAllPatients
 };

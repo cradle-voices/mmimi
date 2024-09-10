@@ -63,6 +63,7 @@ menu.state('showAccountData', {
 menu.state('showMedications', {
     run: async () => {
         console.log("Fetching Medications");
+        //console.log(menu.args.phoneNumber)
 
         let session_data = menu.args.text.split('*');
 
@@ -70,7 +71,10 @@ menu.state('showMedications', {
             try {
                 // Fetch the patient's allergies using their phone number
                 let patient = await getPatientByPhone(menu.args.phoneNumber);
+                //console.log(patient);
+                
                 let medications   = patient['patient']['medicalHistory']['medications'];
+                
 
                 // Sort allergies by timestamp in descending order (most recent first)
                 medications.sort((a, b) => Number(b.timestamp) - Number(a.timestamp));
@@ -79,14 +83,14 @@ menu.state('showMedications', {
                 let recentMedications = medications.slice(0, 3);
 
                 // Create the output string
-                let medicationsMessage = 'Most recent Surgaries:\n';
+                let medicationsMessage = 'Most recent Medications:\n';
                 recentMedications.forEach((medication, index) => {
                     medicationsMessage += `${index + 1}. Illness: ${medication.illness} - Medication:  ${medication.medicationName } dosage:  ${medication.dosage}\n`;
                 });
 
                 // If no allergies are found
                 if (recentMedications.length === 0) {
-                    medicationsMessage = 'No allergies found for this patient.';
+                    medicationsMessage = 'No Medication found for this patient.';
                 }
 
                 menu.con(medicationsMessage + '\n00: Home');
@@ -154,8 +158,10 @@ menu.state('showTests', {
 //show Surgaries
 //STATUS: Done1!
 menu.state('ShowSurgeries', {
+    
     run: async () => {
         console.log("Fetching allergies...");
+        //console.log(menu.args.phoneNumber)
 
         let session_data = menu.args.text.split('*');
 
@@ -202,6 +208,7 @@ menu.state('ShowSurgeries', {
 menu.state('ShowAlergies', {
     run: async () => {
         console.log("Fetching allergies...");
+        console.log(menu.args.phoneNumber)
 
         let session_data = menu.args.text.split('*');
 
