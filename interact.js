@@ -1,42 +1,26 @@
 const { Web3 } = require("web3");
 
-const { createPatient, addTestResult, addVitalSign, addMedication, addAllergy, addSurgery, addFamilyHistory, getPatientByPhone, getPatientMedicalHistory } = require('./functions');
+const { createPatient, addTestResult, addVitalSign, addMedication, addAllergy, addSurgery, addFamilyHistory, getPatientByPhone, getPatientMedicalHistory,getAllThePatients } = require('./functions');
+const { response } = require("express");
 
 // Initialize Web3 instance
 const web3 = new Web3("http://127.0.0.1:8545/");
 
-async function interact() {
+
+async function interact() { 
     try {
         const accounts = await web3.eth.getAccounts();  // Fetch available accounts
         const defaultAccount = accounts[0];
+        patients = await getPatientByPhone("254794940160");
+        //get patinet tby phone 
+        // console.log(patients['patient']['uuid']);
+        console.log(patients['patient']['medicalHistory']);
 
-        // Create a new patient
-        const patientUUID = await createPatient("John Doe", "1234567890", 30, defaultAccount);
+        //add a new allergy 
+    //    const  response = await addAllergy(patients['patient']['uuid'], "Dairy Allergy", " Hives, swelling of the lips or tongue, vomiting, diarrhea, wheezing, difficulty", defaultAccount);
+        // console.log(response);
 
-        // Add test result
-        await addTestResult(patientUUID, "Blood Test", "Positive", defaultAccount);
-
-        // Add vital signs
-        await addVitalSign(patientUUID, "Blood Pressure", "120/80", defaultAccount);
-
-        // Add medication
-        await addMedication(patientUUID, "Flu", "Tamiflu", "10mg", 1633024800, 1633636800, defaultAccount);
-
-        // Add allergy
-        await addAllergy(patientUUID, "Peanuts", "Anaphylaxis", defaultAccount);
-
-        // Add surgery
-        await addSurgery(patientUUID, "Appendectomy", "Successful", 1633024800, defaultAccount);
-
-        // Add family history
-        await addFamilyHistory(patientUUID, "Father", "Heart Disease", "Had surgery at 60", defaultAccount);
-
-        // Retrieve patient by phone
-        await getPatientByPhone("1234567890");
-
-        // Retrieve patient's medical history
-        await getPatientMedicalHistory(patientUUID);
-
+       
     } catch (error) {
         console.error("An error occurred:", error);
     }

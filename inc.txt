@@ -1,0 +1,26 @@
+ // Create a new patient
+        const patientUUID = await createPatient("Collins Ochieng", "254794940160", 10, defaultAccount);
+
+        // Add test result
+        await addTestResult(patientUUID, "Mlaria ", "Positiive", defaultAccount);
+
+        // Add vital signs
+        await addVitalSign(patientUUID, "Blood Pressure", "121/80", defaultAccount);
+
+        // Add medication
+        await addMedication(patientUUID, "Flu", "chrrolofile", "10mg", 1633024800, 1633636800, defaultAccount);
+
+        // Add allergy
+        await addAllergy(patientUUID, "Peanuts", "Anaphylaxis", defaultAccount);
+
+        // Add surgery
+        await addSurgery(patientUUID, "Appendectomy", "Successful", 1633024800, defaultAccount);
+
+        // Add family history
+        await addFamilyHistory(patientUUID, "Father", "Heart Disease", "Had surgery at 63", defaultAccount);
+
+        // Retrieve patient by phone
+        await getPatientByPhone("254794940160");
+
+        // Retrieve patient's medical history
+        await getPatientMedicalHistory(patientUUID);
