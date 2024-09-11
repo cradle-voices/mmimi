@@ -80,8 +80,8 @@ For future iterations, we plan to explore further solutions or updates to the **
 ### Devs Who Helped
 
 We want to thank the following developers who helped overcome the technical challenges:
-- @SantiagoDevRe (GitHub)  
-- @codescolls (GitHub)  
+-SantiagoDevRe (GitHub)  
+-codescolls (GitHub)  
 
 ---
 
@@ -89,6 +89,6 @@ We want to thank the following developers who helped overcome the technical chal
 
 - [YouTube Video Demonstration](https://youtu.be/p44KUs9n604)
 - [Google Slides Presentation](https://docs.google.com/presentation/d/1-WaLYL7FYwSbKnIf-VHaF7hqDPuFkmWSB43X1mGo8OA/edit?usp=sharing)
-- Follow us on Twitter: [CradleVoices Twitter](https://twitter.com/colls_codes)
+- Follow us on Twitter: [colls_codes](https://twitter.com/colls_codes)
 
 ---
