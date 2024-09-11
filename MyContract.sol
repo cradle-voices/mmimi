@@ -59,7 +59,7 @@ contract MyContract {
     }
 
     mapping(bytes32 => Patient) private patientsByUUID;
-    mapping(string => bytes32) private patientPhoneToUUID;  // Map phone to UUID for easy lookup
+    mapping(string => bytes32) private patientPhoneToUUID;  
     bytes32[] private patientList;
 
     /*----------------------- Patient Management --------------------------*/
